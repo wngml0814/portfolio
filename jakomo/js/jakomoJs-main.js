@@ -73,17 +73,6 @@ var swiper3 = new Swiper('.swiper-container.favCon02', {
   }
 });
 
-// var swiper4 = new Swiper('.swiper-container.mediaG', {
-//   slidesPerView: 4,
-//   spaceBetween: 30,
-//   slidesPerGroup: 2,
-//   loop: true,
-//   autoplay: {
-//     delay: 2500,
-//     disableOnInteraction: false,
-//   },
-// });
-
 var iw = window.innerWidth;
 if (iw > 641) {
   new Swiper('.swiper-container.mainVisual-c', {
@@ -212,6 +201,14 @@ $(function () {
   $(".sec04 .modal li > span").click(function () {
     $(".modalBg").removeClass("on");
   })
+
+  $(".topBt").click(function() {
+    $('html, body').animate({
+        scrollTop : 0
+    }, 400);
+    return false;
+  });
+
 });
 
 $(document).scroll(function () {
@@ -224,43 +221,6 @@ $(document).scroll(function () {
   }
 });
 
-// $(document).scroll(function () {
-//   var scroll = $(window).scrollTop();
-//   if (scroll > 800) {
-//     $(".topBt").addClass("on");
-//   } else if (scroll < 800) {
-//     $(".topBt").removeClass("on");
-//   }
-// });
-
-// var lastWidth = $(window).width();
-// $(window).resize(function () {
-//   if ($(window).width() != lastWidth) {
-//     location.reload();
-//     lastWidth = $(window).width();
-//     return false;
-//   }
-// });
-
-// 모바일 
-// var iw = window.innerWidth;
-// if (iw < 641) {
-//   new Swiper('.swiper-container.mainVisual-c', {
-//     pagination: {
-//       el: '.swiper-pagination.main-paging',
-//       type: 'fraction',
-//     },
-//   });
-
-//   new Swiper('.swiper-container.mediaG', {
-//     direction: 'vertical',
-//     loop: false,
-//     navigation: {
-//       nextEl: '.swiper-button-next.mediaBt',
-//       prevEl: '.swiper-button-prev.mediaBt',
-//     },
-//   });
-// }
 
 
 if ($(window).width() > 640 ) {
@@ -271,8 +231,12 @@ if ($(window).width() > 640 ) {
     } else if (scroll < 800) {
       $(".topBt").removeClass("on");
     }
+    if (scroll > 3356) {
+      $(".topBt").addClass("bottom")
+    } else if (scroll < 3356) {
+      $(".topBt").removeClass("bottom")
+    } 
   });
-
 } else if ($(window).width() < 641) {
   // 메뉴버튼
   $(".menuBt").click(function () {
@@ -297,7 +261,16 @@ if ($(window).width() > 640 ) {
     } else if (scroll < 300) {
       $(".topBt").removeClass("on");
     }
+    if (scroll > 2500) {
+      $(".topBt").addClass("bottom");
+    } else if (scroll < 2500) {
+      $(".topBt").removeClass("bottom")
+    } 
   });
 
 }
+
+
+
+
 

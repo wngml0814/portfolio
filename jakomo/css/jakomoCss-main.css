@@ -231,8 +231,6 @@ header {
     height: 50px;
     line-height: 50px;
     padding: 0;
-    /* border: 1px solid #fff; */
-    /* font-size: .8rem; */
     font-weight: 600;
     cursor: pointer;
     position: relative;
@@ -241,7 +239,7 @@ header {
 .moreBt::before {
     display: inline-block;
     content: '\f054';
-    font-size: 0.8rem;
+    /* font-size: 1rem; */
     font-weight: 400;
     position: absolute;
     right: 25px;
@@ -303,17 +301,7 @@ section h1 {
     word-break: keep-all;
 }
 .sec01 > .inner > .textG > .moreBt {
-    /* color: #fff; */
-    width: 200px;
-    padding: 0 50px;
-    border: 1px solid #444;
     bottom: -40px;
-}
-.sec01 > .inner > .textG > .moreBt:hover {
-    border-color: transparent;
-    background: #7d6c23;
-    color: #fff;
-    opacity: .9;
 }
 .sec01 > .inner > .brandVideo {
     width: 50%;
@@ -673,17 +661,8 @@ section h1 {
     position: relative;
 }
 .sec04 .moreBt {
-    width: 200px;
-    padding: 0 50px;
-    border: 1px solid #666;
     position: absolute;
     right: 0;
-}
-.sec04 .moreBt:hover {
-    border-color: transparent;
-    background: #7d6c23;
-    color: #fff;
-    opacity: .9;
 }
 .sec04 .mediaG{
     margin: 120px 0 200px ;
@@ -1006,14 +985,13 @@ section h1 {
     transition: all 1s;
 } */
 
-.topBt { opacity: 0;}
-.topBt.on {
+.topBt { 
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     right: 100px;
-    bottom: 300px;
+    bottom: 100px;
     z-index: 300;
     width: 50px;
     height: 50px;
@@ -1022,10 +1000,17 @@ section h1 {
     background-color: #000;
     color: #fff;
     transition: all .5s ease;
+    opacity: 0;
+}
+.topBt.on {
     opacity: 1;
 }
 .topBt.on:hover {
     background-color: #7d6c23;
+}
+.topBt.bottom {
+    /* opacity: 1; */
+    bottom: 350px;
 }
 footer {
     width: 100%;
@@ -1284,7 +1269,7 @@ footer .sns > a {
 .vrBanner > div {
     display: flex;
     padding: 40px;
-    height: 400px;
+    height: 300px;
     background: url(../images/jakomo/vrBanner/vrBannerBg.png) 50% 50% ;
     background-size: cover;
 }
@@ -1322,7 +1307,9 @@ footer .sns > a {
     /* height: 40px; */
     background: transparent;
     border: 1px solid #7d6c23;
+    border-radius: 50px;
     color: #fff;
+    font-weight: 600;
     transition: all .5s ease;
     opacity: .8;
     cursor: pointer;
